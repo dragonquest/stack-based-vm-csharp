@@ -1,0 +1,39 @@
+# Factorials
+# Prints the factorials from 1 up to 10
+
+  PUSH 1
+  GSTORE 0
+
+loop:
+  GLOAD 0
+  CALL 1 @fact
+  PRINT
+
+  GLOAD 0
+  PUSH 1
+  IADD
+  GSTORE 0
+
+  GLOAD 0
+  PUSH 10
+  ILESSTHAN
+  JUMPTRUE @loop
+  HALT
+
+fact:
+  LOAD 0
+  PUSH 2
+  ILESSTHAN
+  JUMPFALSE @isBigger
+  PUSH 1
+  RET
+
+isBigger:
+  LOAD 0
+  LOAD 0
+  PUSH 1
+  ISUB
+  CALL 1 @fact
+  IMULT
+  RET
+

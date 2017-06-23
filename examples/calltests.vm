@@ -1,0 +1,36 @@
+# Some call tests
+
+  PUSH 1
+  PRINT
+
+  PUSH 300
+  PUSH 200
+  CALL 2 @printer
+
+  PUSH 600
+  PUSH 500
+  CALL 2 @printer
+
+  PUSH 3
+  PRINT
+  HALT
+
+printer:
+  LOAD 0                 # Load the topmost argument
+  CALL 1 @printOne
+
+  LOAD 1
+  CALL 1 @printOne
+
+  RET
+
+printOne:
+  LOAD 0
+  PRINT
+  CALL 0 @pushOne
+  RET
+
+pushOne:
+  PUSH 8
+  RET
+

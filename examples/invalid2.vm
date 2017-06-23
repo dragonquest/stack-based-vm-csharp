@@ -1,0 +1,14 @@
+# Invalid example. Printing a number with invalid parameter type
+push ab 
+push 1
+isub
+push 10
+gstore 0
+gload 0
+imult
+push 2
+idiv
+push 12
+ilessthan
+print
+halt

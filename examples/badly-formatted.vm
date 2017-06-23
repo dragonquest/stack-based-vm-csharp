@@ -1,0 +1,13 @@
+# Sample Instruction
+    # TestData Entry
+push        3
+push 10 # A comment
+
+iadd gstore 0
+  gload 0
+    push    10 #push 10 onto stack
+isub
+
+
+      print
+halt

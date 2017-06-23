@@ -1,0 +1,49 @@
+# Some op tests
+
+  PUSH 3
+  PUSH 10
+  IADD
+  PRINT
+
+  PUSH 10
+  PUSH 3
+  ISUB
+  PRINT
+
+  PUSH 10
+  PUSH 3
+  IMULT
+  PRINT
+
+  PUSH 27
+  PUSH 3
+  IDIV
+  PRINT
+
+  PUSH 27
+  PUSH 3
+  IEQUAL
+  PRINT
+
+  PUSH 3
+  PUSH 3
+  IEQUAL
+  PRINT
+
+  PUSH 27
+  PUSH 3
+  ILESSTHAN
+  PRINT
+
+  PUSH 3
+  PUSH 27
+  ILESSTHAN
+  PRINT
+
+  PUSH 5
+  GSTORE 0
+  GLOAD 0
+  PRINT
+
+  HALT
+

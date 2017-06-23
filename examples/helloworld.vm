@@ -1,0 +1,34 @@
+# Sample Instruction
+# Loop: Prints numbers starting from 10 to 1
+#
+  PUSH 10
+  PUSH 33
+  PUSH 100
+  PUSH 108
+  PUSH 114
+  PUSH 111
+  PUSH 87
+  PUSH 32
+  PUSH 111
+  PUSH 108
+  PUSH 108
+  PUSH 101
+  PUSH 72
+
+  PUSH 13                 # Start at number 10
+  GSTORE 0               # Store it at the global memory at position 0
+
+loop:                    # loop is a label at address 4
+  PRINTCHAR
+
+  GLOAD 0                # Load the counter number from memory, pos 0
+  PUSH 1                 # Push 1
+  ISUB                   # Decrement the number which is onto the stack by 1
+  GSTORE 0               # Store the result on the global memory at position 0
+  GLOAD 0                # Load the number again from the global memory
+
+  PUSH 0                 # Push 0 to see if we reached 0 already
+  IEQUAL                 # check if 0 == (value onto the stack; counter)
+  JUMPFALSE @loop        # if false, then we jump to the address 4 (GLOAD 0)
+  HALT                   # Exiting
+

@@ -1,0 +1,5 @@
+loop:
+  CALL 1 @fact
+
+fact:
+  halt

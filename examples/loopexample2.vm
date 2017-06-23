@@ -1,0 +1,26 @@
+# Sample Instruction
+# Loop: Prints numbers starting from 10 to 1
+# This example has a exit label defined at the end
+
+  PUSH 10                # Start at number 10
+  GSTORE 0               # Store it at the global memory at position 0
+
+loop:                    # loop is a label at address 4
+  GLOAD 0                # Load it again onto the stack
+  PRINT                  # Print the number which is onto the stack
+
+  GLOAD 0                # Load the counter number from memory, pos 0
+  PUSH 1                 # Push 1
+  ISUB                   # Decrement the number which is onto the stack by 1
+  GSTORE 0               # Store the result on the global memory at position 0
+  GLOAD 0                # Load the number again from the global memory
+
+  PUSH 0                 # Push 0 to see if we reached 0 already
+  IEQUAL                 # check if 0 == (value onto the stack; counter)
+  JUMPTRUE @exit
+
+  JUMP @loop        # if false, then we jump to the address 4 (GLOAD 0)
+  HALT                   # Exiting
+
+exit:
+  HALT
